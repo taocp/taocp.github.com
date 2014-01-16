@@ -14,19 +14,37 @@
 
         <center><font size="9" color="red">hello, world!</font></center></ br>
 
+        <hr>
+        <li><a href="#work" title="work">work</a></li>
+        <li><a href="#biography" title="biography">biography</a></li>
+        <li><a href="#faq" title="FAQ">FAQ</a></li>
+        </ br>
+        <hr><h2><a name="biography">自传</a></h2>
+        本功能待完善，敬请期待～<br>
+        感谢您的支持！
+
+        <hr><h2><a name="work">作品</a></h2>
+        <ol>
+            <li><a href="./_posts/2014-1-16-hello-world.html" target="_blank" title="articles">部分文章、学习笔记与心得</a></li><br>
+        </ol>
+
+        <hr><h2><a name="faq">常见问题解答</a></h2>
+        <ol>
+            <li>
+            Q:姓名的由来？<br>
+            A:...<br>
+            </li>
+
+            <li>
+            Q: <br>
+            A: <br>
+            </li>
+        </ol>
+
+        <hr><h3>链接</h3>
+        <a href="http://cm.bell-labs.com/who/dmr" target="_blank" title="DR">Dennis Ritchie Home Page</a><br>
+        <a  href="http://www.kohala.com/start/" target="_blank" title="RS">Richard Stevens Home Page</a><br>
+        <a href="http://www.google.com/ncr" target="_blank" title="google">Google（美帝站）（请遵守中国法律）</a><br>
 
     </body>
 </html>
-
-
----
-layout: default
-title: 我的Blog
----
-<h2>{{ page.title }}</h2>
-<p>最新文章</p>
-<ul>
-    {% for post in site.posts %}
-    <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-</ul>
