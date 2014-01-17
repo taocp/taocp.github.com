@@ -1,9 +1,8 @@
 ---
 layout: post
-title: ""
 description: ""
 tweet-text: "None.NULL"
-author: me
+author: taocp
 categories:
 - "随想"
 ---
