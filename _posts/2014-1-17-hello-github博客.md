@@ -1,7 +1,6 @@
 ---
 layout: post
-description: ""
-tweet-text: "None.NULL"
+description: "init gh-pages"
 author: taocp
 categories:
 - "随想"
