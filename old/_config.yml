@@ -1,0 +1,4 @@
+name: taocp-blog
+markdown: redcarpet
+pygments: true
+baseurl: /

@@ -1,4 +1,12 @@
-name: taocp-blog
-markdown: redcarpet
+title: My blog
+#url: http://www.mydomain.com
+
+markdown: rdiscount
 pygments: true
-baseurl: /
+permalink: /:year/:month/:day/:title
+
+lsi: true
+paginate: 20
+
+exclude:
+- CNAME
