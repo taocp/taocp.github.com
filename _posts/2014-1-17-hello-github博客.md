@@ -2,7 +2,6 @@
 layout: post
 description: "init gh-pages"
 author: taocp
-categories:
 - "随想"
 ---
 

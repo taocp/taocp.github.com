@@ -3,6 +3,7 @@ layout: post
 description: "从windows转到linux的新手可能遇到的问题"
 author: taocp
 categories:linux
+- "linux"
 ---
 
 &nbsp;&nbsp;&nbsp;&nbsp;记录一些windows与linux双系统导致的问题，主要是windows给linux带来的问题 ^Q^
