@@ -1,8 +1,11 @@
 ---
 layout: post
-description: "从windows转到linux的新手可能遇到的问题"
+description: "None.NULL"
+tweet-text: ""
 author: taocp
-categories:linux
+tags:
+- foo
+categories:
 - "linux"
 ---
 

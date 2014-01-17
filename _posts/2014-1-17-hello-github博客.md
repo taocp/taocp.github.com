@@ -1,7 +1,11 @@
 ---
 layout: post
-description: "init gh-pages"
+description: "None.NULL"
+tweet-text: ""
 author: taocp
+tags:
+- foo
+categories:
 - "随想"
 ---
 
