@@ -84,9 +84,9 @@ body{ font:16px/26px Helvetica, Helvetica Neue, Arial; }
     ALL: Orange Theme
    =================== */
 
-#header-container{ border-bottom: 20px solid #e44d26; }
-#footer-container{ border-top:    20px solid #e44d26; }
-#main aside      { border-top:    20px solid #e44d26; }
+#header-container{ border-bottom: 20px solid #202020; }
+#footer-container{ border-top:    20px solid #202020; }
+#main aside      { border-top:    20px solid #202020; }
 
 #header-container,
 #footer-container,
@@ -111,7 +111,7 @@ nav a{
 	padding:15px 0;
 
 	/*background:#e44d26;*/
-	background:#0A0909;
+	background:#202020;
 	color:white;
 
 	text-align:center;
