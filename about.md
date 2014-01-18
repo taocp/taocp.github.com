@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Something about my blog
+title: Something about my|blog
 description: Something more
 ---
 
