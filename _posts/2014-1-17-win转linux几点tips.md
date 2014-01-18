@@ -4,7 +4,7 @@ description: "None.NULL"
 tweet-text: ""
 author: taocp
 tags:
-- foo
+- linux
 categories:
 - "linux"
 ---

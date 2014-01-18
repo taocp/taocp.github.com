@@ -4,7 +4,7 @@ description: "None.NULL"
 tweet-text: ""
 author: taocp
 tags:
-- foo
+- hello
 categories:
 - "随想"
 ---
