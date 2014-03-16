@@ -6,7 +6,7 @@ author: taocp
 tags:
 - encoding
 categories: 
-- "unicode"
+- None 
 ---
 
 unicode:
