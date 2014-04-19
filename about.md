@@ -9,7 +9,7 @@ description: Something more
 
 * I get the template from [here]( https://github.com/kblomqvist/ghblog-template.git )
 
-* Contact me: ihitabug[at]gmail.c0m ( welcome :D )
+* Contact me: taocipian[at]gmail.c0m
 
 * my interest:
     * C 
