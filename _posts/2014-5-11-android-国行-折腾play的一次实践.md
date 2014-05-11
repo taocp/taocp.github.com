@@ -22,7 +22,7 @@ categories:
     代理类型: GAE
     代理地址: https://your_id.appspot.com/fetch.py
     本地端口: 1984
-    密钥:     自己的密钥, 形如"abcd efgh ijkl mnlo", 不用引号, 带上空格
+    密钥:     自己的密钥, 形如"abcd efgh ijkl mnop", 不用引号, 带上空格
     最后勾选上 "电子市场" (英文系统此处为android market)
 重启
 
@@ -43,11 +43,12 @@ categories:
 
 **可能的原因**:安全软件(如lbe)/防火墙(如droidwall)禁止了相应的系统程序联网.
 
-**解决1**:droidwall防火墙,允许以下2个程序联网
+**解决1**:如果使用droidwall防火墙,允许以下2个程序联网
+
     Download Manager, Downloads, ..., Media Storage
     (root)-Applications running as root
 
-**解决2**:lbe安全大师,允许"媒体存储"联网.(这一条参考自网络,我用droidwall而不是lbe)
+**解决2**:如果使用lbe安全大师,允许"媒体存储"联网.(这一条参考自网络,我用droidwall而不是lbe)
 
 **解决3**:参考上例, 举一反三
 
