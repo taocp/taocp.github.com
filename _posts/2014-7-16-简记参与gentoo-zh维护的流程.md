@@ -4,8 +4,8 @@ description: "None.NULL"
 tweet-text: ""
 author: taocp
 tags:
+- linux
 - gentoo
-- opensource
 categories:
 - ""
 ---
