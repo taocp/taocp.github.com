@@ -12,8 +12,8 @@ description: Something more
 * Contact me: taocipian[at]gmail.c0m
 
 * my interest:
-    * C 
-    * vim
-    * tcp/ip
+    * C
     * python
-    * gentoo GNU/Linux
+    * Linux
+    * tcp/ip
+
