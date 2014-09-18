@@ -4,6 +4,7 @@ layout: default
 {% assign post = page %}
 <div class="hfeed">{% include post-article.html %}</div>
 
+
 {% if site.related_posts.size > 0 %}
 <aside>
 	<h3>Related posts</h3>
@@ -14,3 +15,4 @@ layout: default
 	</ul>
 </aside>
 {% endif %}
+{% include disqus.html %}
