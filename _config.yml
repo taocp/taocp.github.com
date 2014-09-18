@@ -1,6 +1,6 @@
 title: 陶瓷片
-#url: http://taocp.github.io
-url: http://0.0.0.0:4000
+url: http://taocp.github.io
+#url: http://0.0.0.0:4000
 
 markdown: rdiscount
 highlighter: pygments
