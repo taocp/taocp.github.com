@@ -7,13 +7,12 @@ description: Something more
 {{ page.title }}
 ================
 
-* I get the template from [here]( https://github.com/kblomqvist/ghblog-template.git )
+* I get the original template from [here]( https://github.com/kblomqvist/ghblog-template.git )
 
-* Contact me: taocipian[at]gmail.c0m
+* contact me: taocipian[at]gmail.c0m
 
-* my interest:
+* my interests:
     * C
-    * python
     * Linux
-    * tcp/ip
-
+    * Python
+    * Internet
