@@ -210,7 +210,7 @@ The current directory (`.`) is sometimes included by users as well, allowing pro
 
 `_start`做一些初始化工作，例如准备`main()`所需的参数`int argc, char *argv[]`，初始化堆等等。
 然后调用`main()`，接着调用`printf()`，一顿狂奔到达`write(/*stdout*/)`陷入内核`sys_write()`，
-最终跳到`tty_write()`通过汇编语句将"hello,world"写在屏幕上。
+最终跳到`tty_write()`调用`con_write()`通过汇编语句将"hello,world"写在屏幕上。
 
 然后逐级向上返回直到`main()`，`return 0`后离开`main()`再次来到`_start`，
 做一些可能的清理工作，然后`exit()`再次陷入内核`sys_exit()`，
