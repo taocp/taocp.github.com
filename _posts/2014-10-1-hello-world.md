@@ -32,9 +32,9 @@ categories:
 # taocipian@x1-carbon ~ %
 现在shell已经准备就绪，打印出一个"$"或者"%"或者其它符号作为提示符，
 接着调用`fgets()`(或者其它类似函数)来读取用户输入的命令，
-`fgets()`由runtime实现，可能还要调用若干其它函数，不过最终会到达`read()`。
+`fgets()`由标准库实现，可能还要调用若干其它函数，不过最终会到达`read()`。
 
-这个`read()`(`man 2 read`)也是由runtime提供的，一般我们称它为"system call"，
+这个`read()`(`man 2 read`)也是由标准库提供的，一般我们称它为"system call"，
 但其实这个`read()`不是真正的"system call"，看看一个简单的`read()`实现。
 
     int read(int fd, void *buf, int count)
@@ -129,7 +129,7 @@ CPU在一个指令周期的最后阶段会检测中断请求，假设此时键�
 发现缓冲队列`secondary`中还不够一行字符(`tty->secondary.data == 0`)，于是再次`continue`。
 用户接着输入，直到按下了一个回车，条件成熟，于是从`secondary`队列中将键入的内容复制到用户缓冲区`buf`中。`tty_read()`在读取到需要的字节数或者行缓冲模式下读取到换行符就会返回。
 
-这样，当用户输入`vi helloworld.c`并按下回车键后，`tty_read()`返回到内核中的`sys_read()`，接着中断返回到runtime的`read()`，一路向上直到`fgets()`返回，继续执行用户代码，此时输入的`vi helloworld.c`已经被shell获取。
+这样，当用户输入`vi helloworld.c`并按下回车键后，`tty_read()`返回到内核中的`sys_read()`，接着中断返回到标准库的`read()`，一路向上直到`fgets()`返回，继续执行用户代码，此时输入的`vi helloworld.c`已经被shell获取。
 
   - 显示字符的原理
     - console
@@ -165,7 +165,7 @@ The current directory (`.`) is sometimes included by users as well, allowing pro
   - 装载
 
 用户输入`./a.out`并回车后，shell会先`fork()`出子进程，子进程再`execve()`执行`a.out`。
-`fork()`、`execve()`等函数和`read()`类似的道理，由runtime往下陷入内核。
+`fork()`、`execve()`等函数和`read()`类似的道理，由标准库往下陷入内核。
 
 `execve()`在内核中对应`sys_execve()`，它会读取可执行文件`a.out`的前128个字节，用以判断可执行文件的格式。
 如果可执行文件的第一行内容诸如`#!/bin/bash`则交由bash处理。
