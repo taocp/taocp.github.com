@@ -38,6 +38,14 @@ categories:
 
 ## 实现
 
+奇怪的是，通过`inotify`监测，发现每次发生查询时，被修改的文件是`$HOME/.goldendict/history.tmp`，
+而不是`history`。暂时没有精力去研究goldendict的源码，就不追究啦。
+
+所以，`inotfiy`在这里不是直接监听history文件，而是监听`$HOME/.goldendict/`目录，
+监测到events再判断对应的文件是否为history.tmp，是则执行添加生词的操作，否则忽略该事件。
+
+运行：`./a.out ~/.goldendict`
+
 ```C
 #include <stdio.h>
 #include <stdlib.h>
@@ -63,7 +71,7 @@ void add_new_word(void);
 int main(int argc, char *argv[])
 {
     if(argc != 2){
-        printf("usage: ./%s  file/directory\n", argv[0]);
+        printf("usage: ./%s  directory\n", argv[0]);
         exit(1);
     }
     int fd = inotify_init();
