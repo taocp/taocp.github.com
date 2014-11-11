@@ -4,9 +4,10 @@ description: "None.NULL"
 tweet-text: ""
 author: taocp
 tags:
-- unknown
+- programming
+- Linux
 categories:
-- ""
+- programming
 ---
 
 [GoldenDict](http://goldendict.org)是目前用过的Linux下最好的一款词典，支持发音、划屏取词。
@@ -27,9 +28,7 @@ categories:
 简单来说，应用程序对一个特殊的文件描述符执行`read()`从而阻塞，事件发生时`read()`返回，
 应用程序处理相应事件。
 
-关于`inotify`:
-- `man 7 inotify`
-- [Kernel Korner - Intro to inotify](http://www.linuxjournal.com/article/8478)
+关于`inotify`: - `man 7 inotify` - [Kernel Korner - Intro to inotify](http://www.linuxjournal.com/article/8478)
 
 ---
 
