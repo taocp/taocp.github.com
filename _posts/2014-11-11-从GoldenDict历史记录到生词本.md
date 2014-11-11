@@ -28,7 +28,11 @@ categories:
 简单来说，应用程序对一个特殊的文件描述符执行`read()`从而阻塞，事件发生时`read()`返回，
 应用程序处理相应事件。
 
-关于`inotify`: - `man 7 inotify` - [Kernel Korner - Intro to inotify](http://www.linuxjournal.com/article/8478)
+关于`inotify`:
+
+1. `man 7 inotify`
+
+1. [Kernel Korner - Intro to inotify](http://www.linuxjournal.com/article/8478)
 
 ---
 
