@@ -46,7 +46,7 @@ categories:
 
 运行：`./a.out ~/.goldendict`
 
-```C
+{% highlight c linenos %}
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -141,7 +141,7 @@ void add_new_word(void)
 #undef	EVENTS_ONCE
 #undef  BUF_LEN
 #undef	WORD_MAX
-```
+{% endhighlight %}
 
 ---
 
