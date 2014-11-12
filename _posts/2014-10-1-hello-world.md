@@ -13,12 +13,12 @@ categories:
 
 
 {% highlight c linenos %}
-    #include <stdio.h>
-    int main(void)
-    {
-        printf("hello, world\n");
-        return 0;
-    }
+#include <stdio.h>
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}
 {% endhighlight %}
 
 "hello, world"是我编程生涯中的第一个程序，
@@ -41,21 +41,21 @@ categories:
 但其实这个`read()`不是真正的"system call"，看看一个简单的`read()`实现。
 
 {% highlight c linenos %}
-    int read(int fd, void *buf, int count)
-    {
-        int res = 0;
-        asm(
-            "movl  $3, %%eax\n\t"
-            "movl  %1, %%ebx\n\t"
-            "movl  %2, %%ecx\n\t"
-            "movl  %3, %%edx\n\t"
-            "int $0x80\n\t"
-            "movl  %%eax, %0\n\t"
-            :"=m"(res)
-            :"m"(fd), "m"(buf), "m"(count)
-            );
-        return res;
-    }
+int read(int fd, void *buf, int count)
+{
+    int res = 0;
+    asm(
+        "movl  $3, %%eax\n\t"
+        "movl  %1, %%ebx\n\t"
+        "movl  %2, %%ecx\n\t"
+        "movl  %3, %%edx\n\t"
+        "int $0x80\n\t"
+        "movl  %%eax, %0\n\t"
+        :"=m"(res)
+        :"m"(fd), "m"(buf), "m"(count)
+        );
+    return res;
+}
 {% endhighlight %}
 
 可见这个`read()`是通过`int 0x80`陷入内核，调用内核里的`sys_read()`来交差的，后者才是真正的"system call"。
@@ -70,12 +70,12 @@ categories:
 也就是`int read(int fd, void *buf, int count)`中的那个`buf`。
 
 {% highlight c linenos %}
-    // tty_read() 的代码片段：
-    if (EMPTY(tty->secondary) ||
-            (L_CANON(tty) && !tty->secondary.data && LEFT(tty->secondary)>20)) {
-        sleep_if_empty(&tty->secondary);
-        continue;
-    }
+// tty_read() 的代码片段：
+if (EMPTY(tty->secondary) ||
+        (L_CANON(tty) && !tty->secondary.data && LEFT(tty->secondary)>20)) {
+    sleep_if_empty(&tty->secondary);
+    continue;
+}
 {% endhighlight %}
 
 此时输入缓冲队列(名为secondary)为空，没有数据来源可以复制，
@@ -126,12 +126,12 @@ CPU在一个指令周期的最后阶段会检测中断请求，假设此时键�
 承前所述，shell已经被唤醒处于就绪态，但暂时没有被分配到CPU。在某一次调度中，CPU选择shell继续执行。
 
 {% highlight c linenos %}
-    // tty_read() 的代码片段：
-    if (EMPTY(tty->secondary) ||
-            (L_CANON(tty) && !tty->secondary.data && LEFT(tty->secondary)>20)) {
-        sleep_if_empty(&tty->secondary);
-        continue;
-    }
+// tty_read() 的代码片段：
+if (EMPTY(tty->secondary) ||
+        (L_CANON(tty) && !tty->secondary.data && LEFT(tty->secondary)>20)) {
+    sleep_if_empty(&tty->secondary);
+    continue;
+}
 {% endhighlight %}
 
 `tty_read()`从`sleep_if_empty()`中返回后`continue`到循环首部再次执行到`if()`语句处检查条件，
@@ -186,21 +186,21 @@ The current directory (`.`) is sometimes included by users as well, allowing pro
 
 
 {% highlight c linenos %}
-    // 因为 Linux v0.11 还不支持动态链接
-    // 所以参考 Linux v3.16.0 的部分代码
-    // fs/binfmt_elf.c
-    static int load_elf_binary(struct linux_binprm *bprm)
-    {
+// 因为 Linux v0.11 还不支持动态链接
+// 所以参考 Linux v3.16.0 的部分代码
+// fs/binfmt_elf.c
+static int load_elf_binary(struct linux_binprm *bprm)
+{
+    // ...
+    if (elf_interpreter) {
         // ...
-        if (elf_interpreter) {
-            // ...
 
-            elf_entry = load_elf_interp(/*...*/);
+        elf_entry = load_elf_interp(/*...*/);
 
-            // ...
-        }
         // ...
     }
+    // ...
+}
 {% endhighlight %}
 
 于是内核根据`a.out`的`.interp`段找到动态链接器，把它映射到进程的虚拟地址空间。
@@ -214,12 +214,12 @@ The current directory (`.`) is sometimes included by users as well, allowing pro
 `a.out`真正的入口不是`main()`，可能是`_start`，这取决于runtime的实现。
 
 {% highlight c linenos %}
-    #include <stdio.h>
-    int main(void)
-    {
-        printf("hello, world\n");
-        return 0;
-    }
+#include <stdio.h>
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}
 {% endhighlight %}
 
 `_start`做一些初始化工作，例如准备`main()`所需的参数`int argc, char *argv[]`，初始化堆等等。
@@ -233,31 +233,31 @@ The current directory (`.`) is sometimes included by users as well, allowing pro
 
 
 {% highlight c linenos %}
-    int sys_waitpid(pid_t pid,unsigned long * stat_addr, int options)
-    {
-        // ...
-        case TASK_ZOMBIE:
-            //...
-            release(*p);
-            //...
-        // ...
-    }
+int sys_waitpid(pid_t pid,unsigned long * stat_addr, int options)
+{
+    // ...
+    case TASK_ZOMBIE:
+        //...
+        release(*p);
+        //...
+    // ...
+}
 
-    void release(struct task_struct * p)
-    {
-        int i;
+void release(struct task_struct * p)
+{
+    int i;
 
-        if (!p)
+    if (!p)
+        return;
+    for (i=1 ; i<NR_TASKS ; i++)
+        if (task[i]==p) {
+            task[i]=NULL;
+            free_page((long)p);
+            schedule();
             return;
-        for (i=1 ; i<NR_TASKS ; i++)
-            if (task[i]==p) {
-                task[i]=NULL;
-                free_page((long)p);
-                schedule();
-                return;
-            }
-        panic("trying to release non-existent task");
-    }
+        }
+    panic("trying to release non-existent task");
+}
 {% endhighlight %}
 
 父进程shell`wait()`子进程再做最后的清理，例如释放 子进程PCB及内核栈 使用的1页内存。
