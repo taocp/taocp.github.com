@@ -6,7 +6,7 @@ author: taocp
 tags:
 - linux
 - programming
-- OS
+- os
 categories:
 - "linux"
 ---
