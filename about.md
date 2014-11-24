@@ -1,13 +1,13 @@
 ---
 layout: default
-title: Something about me | blog
+title: about me && blog
 description: Something more
 ---
 
 {{ page.title }}
 ================
 
-* I get the original template from [here]( https://github.com/kblomqvist/ghblog-template.git )
+* I got the original template from [here]( https://github.com/kblomqvist/ghblog-template.git )
 
 * contact me: `echo "dGFvY2lwaWFuQGdtYWlsLmNvbQo="|base64 -d`
 
