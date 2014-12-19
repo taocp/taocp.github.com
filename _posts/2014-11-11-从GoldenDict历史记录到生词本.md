@@ -11,6 +11,7 @@ categories:
 ---
 
 [GoldenDict](http://goldendict.org)是目前用过的Linux下最好的一款词典，支持发音、划屏取词。
+合理配置还能识别出单词的各种时态（菜单Edit -- Dictionaries -- Sources -- Morphology）。
 
 美中不足是它的历史记录功能还不完善，只能按查询的实际顺序记录20个单词，
 没有给用户提供任何操作接口，所以没办法将查询的生词直接加入生词本。
