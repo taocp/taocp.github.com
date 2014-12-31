@@ -16,3 +16,4 @@ description: Something more
     * Linux
     * Python
     * Internet
+    * Distributed Computation and Storage
