@@ -9,3 +9,10 @@ taocipian(陶瓷片)
 
 本博客的模板参考自[这里]( https://github.com/kblomqvist/ghblog-template.git )，
 根据自己的喜好，做了一些修改。
+
+todo
+===
+
+"hello-world"删除不必要的细枝末节
+
+"C语言可变参数"举例说明
