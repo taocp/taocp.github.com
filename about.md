@@ -24,4 +24,7 @@ description: Something more
 
 关于[**taocp**](https://www.google.com/#q=taocp)这个名字。
 
-嗯，是的，我就是这么无耻 ╮(╯▽╰)╭. (应该没有侵权吧=。=)
+本渣原意是taocipian的简称(作自己都不相信状**←_←**)，
+不要想弄那么个大新闻，提高到什么[计算机程序设计艺术](https://www.google.com/#q=taocp)的层次，就把我批判一番！
+
+// 嗯，是的，我就是这么无耻 ╮(╯▽╰)╭.
