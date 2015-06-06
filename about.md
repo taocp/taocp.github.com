@@ -9,14 +9,14 @@ description: Something more
 
 * GNU/Linux爱好者，平时用Gentoo，伪Geek
 
-* 熟悉C，会一点Python，正在学习C++和JavaScript
+* 熟悉C，会一点Python，正在学习C++，计划学习一门类Lisp语言
 
-* 对偏后端的技术感兴趣，正在努力寻找最喜欢的技术领域
+* 对偏后端、系统底层的技术感兴趣，正在努力寻找最喜欢的技术领域
 
 * 工作经验：
-  - [2014.12 - present] 实习，参与[一个分布式表格存储系统](https://github.com/BaiduPS/tera)的实现。我在其中打酱油。
+  - [2014.12 - 2015.5] 实习，参与[一个分布式表格存储系统](https://github.com/BaiduPS/tera)的实现。我担任首席酱油官。
 
-* email: `echo "dGFvY2lwaWFuQGdtYWlsLmNvbQo="|base64 -d`
+* email: `echo "dGFvY2lwaWFuQGdtYWlsLmNvbQo=" | base64 -d`
 
 博文有错误或其它任何建议，都欢迎联系我！
 
