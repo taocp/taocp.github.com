@@ -9,7 +9,7 @@ description: Something more
 
 * GNU/Linux爱好者，平时用Gentoo，伪Geek
 
-* 熟悉C，会一点Python，正在学习C++，计划学习一门类Lisp语言
+* 熟悉C，会一点Python，正在学习C++，计划学习一门函数式编程语言
 
 * 对偏后端、系统底层的技术感兴趣，正在努力寻找最喜欢的技术领域
 
