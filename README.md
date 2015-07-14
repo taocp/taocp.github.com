@@ -13,6 +13,4 @@ taocipian(陶瓷片)
 todo
 ===
 
-"hello-world"删除不必要的细枝末节
-
 "C语言可变参数"举例说明
