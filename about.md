@@ -7,19 +7,18 @@ description: Something more
 {{ page.title }}
 ================
 
-* GNU/Linux爱好者，平时用Gentoo，伪Geek，年轻时爱折腾，工作后太忙没空折腾很遗憾 :(
+* GNU/Linux爱好者，平时用Gentoo，伪Geek，宅
 
-* 熟悉C，会一点Python，正在使用C++，计划学习一门函数式编程语言
+* 熟悉C，会一点Python，目前主要使用C++，业余了解过Erlang
 
-* 懂一点点分布式系统和存储相关的知识，在该领域处于正在入门的阶段
+* 懂一点点分布式系统和存储相关的知识，在该领域处于入门阶段
 
-* 对偏后端、操作系统底层的技术感兴趣，正在努力寻找最喜欢的技术领域
+* 对偏后端、操作系统、网络的技术感兴趣，正在努力寻找最喜欢的技术领域
 
 * 工作经验：
-  - [2014.12 - 2015.5] 实习，参与[一个分布式表格存储系统](https://github.com/BaiduPS/tera)的实现。我在其中打酱油。
-  - [2015.07 - present] baidu，参与[一个分布式表格存储系统](https://github.com/BaiduPS/tera)的实现。我继续在其中打酱油。
+  - [2015.07 - present] baidu，参与[一个分布式表格存储系统](https://github.com/baidu/tera)的实现。我在其中打酱油=.=。
 
-* email: taocipian __at__ gmail __dot__ com
+* email: taocipian __at__ Gmail _dot_ com
 
 博文有错误或其它任何建议，都欢迎联系我！
 
