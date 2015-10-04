@@ -4,9 +4,6 @@ title: about me
 description: Something more
 ---
 
-{{ page.title }}
-================
-
 * GNU/Linux爱好者，平时用Gentoo，伪Geek，宅
 
 * 熟悉C，会一点Python，目前主要使用C++，业余了解过Erlang
@@ -16,11 +13,11 @@ description: Something more
 * 对偏后端、操作系统、网络的技术感兴趣，正在努力寻找最喜欢的技术领域
 
 * 工作经验：
-  - [2015.07 - present] baidu，参与[一个分布式表格存储系统](https://github.com/baidu/tera)的实现。我在其中打酱油=.=。
+  - [2015.07 - present] baidu，参与[一个分布式表格存储系统](https://github.com/baidu/tera)的实现。
 
 * email: taocipian __at__ Gmail _dot_ com
 
-博文有错误或其它任何建议，都欢迎联系我！
+内容有错误或其它任何建议，都欢迎联系我！
 
 ---
 

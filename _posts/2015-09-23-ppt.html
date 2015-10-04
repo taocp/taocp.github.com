@@ -11,25 +11,84 @@
     <textarea id="source">
 
 class: center, middle, inverse
-# web ppt
+# debug
+<hr />
 
 ```
 taocipian
-2015.3.15
+x.y.z
 ```
 ---
 class: inverse
+## debug
+<hr />
 
-## github-pages for ppt
+1. **_how does debuggers work_**
 
-- 我敬佩能够一口吞下鸡蛋而不会噎着的人
+1. tao of debug
 
-```
-echo "hello, world"
-```
+---
+class: left, inverse
+## how does debuggers work
+<hr />
+
+1. **bootstrap**
+
+1. breakpoint
+
+1. peek and poke
+
 ---
 class: inverse
-powered by [using-cli](https://github.com/xuxiaodong/using-cli)
+### bootstrap
+<hr />
+
+```bash
+% man ptrace
+```
+```C
+SYNOPSIS
+       #include <sys/ptrace.h>
+
+       long ptrace(enum __ptrace_request request, pid_t pid,
+                   void *addr, void *data);
+```
+
+PTRACE_TRACEME
+
+PTRACE_ATTACH
+
+TODO permission
+
+---
+class: inverse
+### breakpoint
+<hr />
+
+```asm
+int 0x3
+```
+
+---
+class: inverse
+### peek and poke
+<hr />
+
+
+
+---
+class: inverse
+### ref
+
+http://www.alexonlinux.com/how-debugger-works
+
+---
+class: center, middle, inverse
+
+Thx
+
+powered by [remark](https://github.com/gnab/remark)
+
 </textarea>
 <script type="text/javascript">
 var slideshow = remark.create({
