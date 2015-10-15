@@ -60,12 +60,40 @@ PTRACE_ATTACH
 
 ---
 class: inverse
+### boot
+<hr />
+
+```bash
+% man ptrace
+```
+```C
+SYNOPSIS
+       #include <sys/ptrace.h>
+
+       long ptrace(enum __ptrace_request request, pid_t pid,
+                   void *addr, void *data);
+```
+
+PTRACE_TRACEME
+
+PTRACE_ATTACH
+
+除了SIGKILL，任何发送给tracee的信号都会导致tracee停止，
+并且tracer可以通过wait相关的调用得知此tracee停止的原因。
+
+---
+class: inverse
 ### breakpoint
 <hr />
 
 ```asm
 int 0x3(0xCC)
 ```
+
+SIGTRAP
+
+tracer通过诸如 WIFSTOPPED() 的调用等待tracee触发断点
+
 <!--
 why must be 1-byte ?  http://blog.jobbole.com/23632/
 
@@ -87,12 +115,24 @@ PTRACE_PEEKTEXT // read
 
 PTRACE_POKETEXT // write
 
+```
+
+---
+class: inverse
+### peek and poke
+<hr />
+```
+PTRACE_PEEKTEXT // read
+
+PTRACE_POKETEXT // write
+
 DWARF(Debugging Information Format)
  - line number
  - function addr
  - variable addr
 ```
 ---
+
 class: inverse
 ## taocp of debug
 <hr />
@@ -405,6 +445,10 @@ http://eli.thegreenplace.net/2011/02/07/how-debuggers-work-part-3-debugging-info
 [code complete 2](http://book.douban.com/subject/1951158/)
 
 [调试9法](http://book.douban.com/subject/5376270/)
+
+`man ptrace`
+
+`man waitpid`
 
 ---
 class: center, middle
