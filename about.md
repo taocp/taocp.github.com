@@ -4,9 +4,9 @@ title: about me
 description: Something more
 ---
 
-* GNU/Linux爱好者，平时用Gentoo，伪Geek，宅
+* GNU/Linux爱好者，平时用Gentoo，宅
 
-* 熟悉C，会一点Python，目前主要使用C++，业余了解过Erlang
+* 熟悉C，会一点Python，目前主要使用C++（其实并不懂）
 
 * 懂一点点分布式系统和存储相关的知识，在该领域处于入门阶段
 
