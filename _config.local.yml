@@ -2,7 +2,7 @@
 title: 陶瓷片
 url: http://0.0.0.0:4000
 
-markdown: rdiscount
+#markdown: rdiscount
 highlighter: pygments
 permalink: /:year/:month/:day/:title
 

@@ -1,7 +1,7 @@
 title: 陶瓷片
 url: http://taocp.github.io
 
-markdown: rdiscount
+#markdown: rdiscount
 highlighter: pygments
 permalink: /:year/:month/:day/:title
 
