@@ -18,18 +18,23 @@ class: center, middle, inverse
 taocipian
 2015.10.16
 ```
+
+press 'h' for help.
+
+press 'insert' for Vimperator users.
+
 ---
 class: inverse
 ## debug
 <hr />
 
-1. **_how does debuggers work_**
+1. **_how does a debugger works_**
 
 1. tips of debug
 
 ---
 class: left, inverse
-## how does debuggers work
+## how does a debugger works
 <hr />
 
 1. **boot**
@@ -47,11 +52,11 @@ class: inverse
 % man ptrace
 ```
 ```C
-SYNOPSIS
-       #include <sys/ptrace.h>
 
-       long ptrace(enum __ptrace_request request, pid_t pid,
-                   void *addr, void *data);
+       long ptrace(enum __ptrace_request request, 
+	   			   pid_t pid,
+                   void *addr, 
+				   void *data);
 ```
 
 PTRACE_TRACEME
