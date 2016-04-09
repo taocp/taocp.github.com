@@ -2,13 +2,14 @@
 title: 陶瓷片
 url: http://0.0.0.0:4000
 
-#markdown: rdiscount
-#highlighter: pygments
+markdown: kramdown
 highlighter: rouge
 permalink: /:year/:month/:day/:title
 
 lsi: false
 paginate: 20
+
+gems: [jekyll-paginate]
 
 exclude:
 - CNAME

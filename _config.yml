@@ -1,12 +1,14 @@
 title: 陶瓷片
 url: http://taocp.github.io
 
-#markdown: rdiscount
-highlighter: pygments
+markdown: kramdown
+highlighter: rouge
 permalink: /:year/:month/:day/:title
 
 lsi: false
 paginate: 20
+
+gems: [jekyll-paginate]
 
 exclude:
 - CNAME
