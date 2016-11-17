@@ -12,6 +12,7 @@ categories:
 ---
 
 
+<!--
 {% highlight c linenos %}
 #include <stdio.h>
 int main(void)
@@ -20,6 +21,15 @@ int main(void)
     return 0;
 }
 {% endhighlight %}
+-->
+```
+#include <stdio.h>
+int main(void)
+{
+    printf("hello, world\n");
+    return 0;
+}
+```
 
 "hello, world"是我编程生涯中的第一个程序，
 读了3年大学，回过头来看看"hello, world"的背后究竟发生了什么。
@@ -34,8 +44,8 @@ int main(void)
 我原本打算尽量少地涉及一些细节例如函数名，
 后来发现很多地方还是用名字来引用更方便。
 
-===
 # taocipian@x1-carbon ~ %
+
 现在shell已经准备就绪，打印出一个"%"或者其它符号作为提示符，
 接着调用`fgets()`(或者其它类似函数)来读取用户输入的命令，
 `fgets()`由标准库实现，可能还要调用若干其它函数，不过最终会到达`read()`。
@@ -43,7 +53,7 @@ int main(void)
 这个`read()`(`man 2 read`)也是由标准库提供的，一般我们称它为"system call"，
 但其实这个`read()`并不是真正的"system call"，看看一个简单的`read()`实现。
 
-{% highlight c linenos %}
+```
 int read(int fd, void *buf, int count)
 {
     int res = 0;
@@ -59,7 +69,7 @@ int read(int fd, void *buf, int count)
         );
     return res;
 }
-{% endhighlight %}
+```
 
 可见这个`read()`是通过`int 0x80`陷入内核，调用内核里的`sys_read()`来交差的，后者才是真正的"system call"。
 
@@ -72,16 +82,16 @@ int read(int fd, void *buf, int count)
 此时shell是等待键盘输入，于是`read()`会接着调用`rw_char()`，
 而`rw_char()`经过层层调用，最终会跳到`tty_read()`，
 `tty_read()`会把tty设备输入队列中的数据复制到用户缓冲区buf中，
-也就是`int read(int fd, void *buf, int count)`中的那个`buf`。
+也就是```int read(int fd, void *buf, int count)```中的那个`buf`。
 
-{% highlight c linenos %}
+```
 // tty_read() 的代码片段：
 if (EMPTY(tty->secondary) ||
         (L_CANON(tty) && !tty->secondary.data && LEFT(tty->secondary)>20)) {
     sleep_if_empty(&tty->secondary);
     continue;
 }
-{% endhighlight %}
+```
 
   - 背景知识：tty设备的输入队列
 
@@ -109,7 +119,7 @@ tty设备有2个队列用于存储输入，分别是`read_q`和`secondary`。
 
 一句话解释：现在shell因为等待I/O而休眠了。
 
-===
+
 # % vi helloworld.c
 
   - 按键回显
@@ -131,7 +141,7 @@ CPU在一个指令周期的最后阶段会检测中断请求，假设此时键�
 
 承前所述，shell已经被唤醒处于就绪态，但暂时没有被分配到CPU。在某一次调度中，CPU选择shell继续执行。
 
-{% highlight c linenos %}
+```
 // tty_read() 的代码片段：
 while(...) {
     ...
@@ -142,7 +152,7 @@ while(...) {
     }
     ...
 }
-{% endhighlight %}
+```
 
 `tty_read()`从`sleep_if_empty()`中返回后`continue`到while循环首部再次执行到`if()`语句处检查条件，
 发现缓冲队列`secondary`中还不够一行字符(`tty->secondary.data == 0`)，于是再次`continue`。
@@ -165,13 +175,12 @@ while(...) {
 
 `vi`获取用户输入的字符，写入文件`helloworld.c`中。
 
-===
 # % gcc -Wall helloword.c
   - 编译：预处理、编译、汇编、链接
 
 // TODO 短时间内不会写，编译原理还需下功夫。
 
-===
+
 # % ./a.out
   - why `./`
 
@@ -199,7 +208,7 @@ such as may be placed there by a malicious tarbomb.
 所以`sys_execve()`最终会调用到`load_elf_binary()`。
 
 
-{% highlight c linenos %}
+```
 // 因为 Linux v0.11 还不支持动态链接
 // 所以参考 Linux v3.16.0 的部分代码
 // fs/binfmt_elf.c
@@ -215,7 +224,7 @@ static int load_elf_binary(struct linux_binprm *bprm)
     }
     // ...
 }
-{% endhighlight %}
+```
 
 于是内核根据`a.out`的`.interp`段找到动态链接器，把它映射到进程的虚拟地址空间。
 并且把`sys_execve()`的返回地址修改为动态链接器的入口地址。
@@ -225,16 +234,16 @@ static int load_elf_binary(struct linux_binprm *bprm)
 
   - 运行
 
-`a.out`真正的入口不是`main()`，可能是`_start`，这取决于runtime的实现。
+`a.out`真正的入口不是`main()`，可能是```_start```，这取决于runtime的实现。
 
-{% highlight c linenos %}
+```
 #include <stdio.h>
 int main(void)
 {
     printf("hello, world\n");
     return 0;
 }
-{% endhighlight %}
+```
 
 `_start`做一些初始化工作，例如准备`main()`所需的参数`int argc, char *argv[]`，初始化堆等等。
 然后调用`main()`，接着调用`printf()`，一顿狂奔到达`write()`陷入内核`sys_write()`，
@@ -245,7 +254,7 @@ int main(void)
 释放占用的内核资源（如页表），将自己的进程状态设置为ZOMBIE，
 通知父进程，然后`schedule()`调度执行别的进程，这次`schedule()`离开后就永远也不会再回来执行了。
 
-{% highlight c linenos %}
+```
 int sys_waitpid(pid_t pid,unsigned long * stat_addr, int options)
 {
     // ...
@@ -271,7 +280,7 @@ void release(struct task_struct * p)
         }
     panic("trying to release non-existent task");
 }
-{% endhighlight %}
+```
 
 父进程shell`wait()`子进程再做最后的清理，例如释放 子进程PCB及内核栈 使用的1页内存。
 
@@ -279,7 +288,7 @@ void release(struct task_struct * p)
 
 shell等待`a.out`终止以后又打印出一个"%"提示符，等待用户的下一次输入。
 
-===
+---
 
 参考资料
 
