@@ -13,7 +13,8 @@ description: Something more
 * 对偏后端、操作系统、网络的技术感兴趣，正在努力寻找最喜欢的技术领域
 
 * 工作经验：
-  - [2015.07 - present] baidu，参与[一个分布式表格存储系统](https://github.com/baidu/tera)的实现。
+  - [2015.07 - 2017.06] 百度 网页搜索部，参与[分布式表格存储系统](https://github.com/baidu/tera)的实现
+  - [2017.07 - ~]       腾讯 架构平台部，CDN方向
 
 * email: taocipian __at__ Gmail _dot_ com
 
