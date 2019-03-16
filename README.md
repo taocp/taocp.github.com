@@ -12,5 +12,5 @@ taocipian(陶瓷片)
 
 todo
 ===
-
-"C语言可变参数"举例说明
+- thinking-in-programming 整理~
+- "C语言可变参数"举例说明
