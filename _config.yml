@@ -3,7 +3,8 @@ url: http://taocp.github.io
 
 markdown: kramdown
 highlighter: rouge
-permalink: /:year/:month/:day/:title
+#permalink: /:year/:month/:day/:title
+permalink: /:title
 
 lsi: false
 paginate: 20
